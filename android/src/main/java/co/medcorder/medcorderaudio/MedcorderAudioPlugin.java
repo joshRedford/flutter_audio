@@ -118,12 +118,12 @@ public class MedcorderAudioPlugin implements MethodCallHandler, EventChannel.Str
     try {
       currentOutputFile = activity.getApplicationContext().getFilesDir() + "/" + fileName + ".aac";
       recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-      int outputFormat = MediaRecorder.OutputFormat.AAC_ADTS;
+      int outputFormat = MediaRecorder.OutputFormat.MPEG_4;
       recorder.setOutputFormat(outputFormat);
-      int audioEncoder = MediaRecorder.AudioEncoder.AAC;
+      int audioEncoder = MediaRecorder.AudioEncoder.AMR_WB;
       recorder.setAudioEncoder(audioEncoder);
       recorder.setAudioSamplingRate(16000);
-      recorder.setAudioChannels(2);
+      recorder.setAudioChannels(1);
       recorder.setAudioEncodingBitRate(32000);
       recorder.setOutputFile(currentOutputFile);
     }
